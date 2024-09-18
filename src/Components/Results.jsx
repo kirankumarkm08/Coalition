@@ -40,7 +40,7 @@ const Results = ({ result }) => {
           ))}
       </div>
       <div className="w-[228px] h-[242px] rounded-md flex flex-col  bg-[#FFE6E9] px-3 py-5 ">
-        <Image src={Temp} />
+        <Image src={Temp} alt="image" />
         {Array.isArray(result) &&
           result.map((res, index) => (
             <>
@@ -74,7 +74,7 @@ const Results = ({ result }) => {
           ))}
       </div>
       <div className="w-[228px] h-[242px] rounded-md flex flex-col  bg-[#FFE6F1] px-3 py-5 ">
-        <Image src={HeartBPM} />
+        <Image src={HeartBPM} alt="image" />
         {Array.isArray(result) &&
           result.map((res, index) => (
             <>
