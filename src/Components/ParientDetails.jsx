@@ -2,46 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import DOB from "/public/ProfileIcons/BirthIcon@2x.png";
 import Gender from "/public/ProfileIcons/FemaleIcon@2x.png";
 import Phn from "/public/ProfileIcons/PhoneIcon@2x.png";
 import Insurance from "/public/ProfileIcons/InsuranceIcon@2x.png";
 import Lab from "@/Components/Lab-results";
 
-const ParientDetails = () => {
-  const [items, setItems] = useState([]);
-  const url = "https://fedskillstest.coalitiontechnologies.workers.dev";
-  const username = "coalition";
-  const password = "skills-test";
-
-  // Encode credentials
-  const credentials = btoa(`${username}:${password}`);
-  useEffect(() => {
-    fetch(url, {
-      method: "GET",
-      headers: {
-        Authorization: `Basic ${credentials}`,
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => setItems(data))
-      .catch((error) => console.error("Error:", error));
-  }, []);
-
-  const icons = [
-    { icon: DOB, label: "Date of Birth" },
-    { icon: Gender, label: "Gender" },
-    { icon: Phn, label: "Phone" },
-    { icon: Insurance, label: "Insurance" },
-  ];
-
+const ParientDetails = ({ items }) => {
   return (
     <div>
       <div className=" max-w-[376px] min-w-[376px] min-h-[740px] bg-white my-10 rounded-3xl flex flex-col items-center py-5 inset-0 ">
