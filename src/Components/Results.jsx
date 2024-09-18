@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const Results = ({ result }) => {
   return (
-    <div className="flex gap-3 mx-2 ">
-      <div className="w-[228px] h-[242px] rounded-md flex flex-col  bg-[#E0F3FA] px-3 py-5 ">
+    <div className="flex gap-3 mx-2  md:max-w-[770px]  hidden lg:flex">
+      <div className="md:max-w-[228px] h-[242px] rounded-md flex flex-col  bg-[#E0F3FA] px-3 py-5 ">
         <Image src={Respiratory} alt="Respiratory" />
         {Array.isArray(result) &&
           result.map((res, index) => (
@@ -39,14 +39,14 @@ const Results = ({ result }) => {
             </>
           ))}
       </div>
-      <div className="w-[228px] h-[242px] rounded-md flex flex-col  bg-[#FFE6E9] px-3 py-5 ">
+      <div className="md:max-w-[228px] h-[242px] rounded-md flex flex-col  bg-[#FFE6E9] px-3 py-5 ">
         <Image src={Temp} alt="image" />
         {Array.isArray(result) &&
           result.map((res, index) => (
             <>
               {index === 3 && (
                 <div
-                  className="flex flex-col gap-2 text-2xl justify-center w-full"
+                  className="flex flex-col gap-2 text-2xl justify-center"
                   key={index}
                 >
                   <div className="flex gap-3">
@@ -60,7 +60,7 @@ const Results = ({ result }) => {
                                 {i.temperature.value} <sup>o</sup> F
                               </div>
                             </div>
-                            <h1 className="font-normal text-[20px] w-[200px]">
+                            <h1 className="font-normal text-[20px] max-w-[200px]">
                               {i.temperature.levels}
                             </h1>
                           </div>
@@ -73,14 +73,14 @@ const Results = ({ result }) => {
             </>
           ))}
       </div>
-      <div className="w-[228px] h-[242px] rounded-md flex flex-col  bg-[#FFE6F1] px-3 py-5 ">
+      <div className="md:max-w-[228px] h-[242px] rounded-md flex flex-col  bg-[#FFE6F1] px-3 py-5 ">
         <Image src={HeartBPM} alt="image" />
         {Array.isArray(result) &&
           result.map((res, index) => (
             <>
               {index === 3 && (
                 <div
-                  className="flex flex-col gap-2 text-2xl justify-center w-full"
+                  className="flex flex-col gap-2 text-2xl justify-center "
                   key={index}
                 >
                   <div className="flex gap-3">

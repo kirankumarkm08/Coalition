@@ -13,6 +13,7 @@ import doctor from "/public/doctor.png";
 import settings from "/public/settings.png";
 import verticleMore from "/public/moreverticle.png";
 import { usePathname } from "next/navigation";
+import Button from "./Button";
 
 const NavBar = () => {
   const nav = [
@@ -44,20 +45,22 @@ const NavBar = () => {
   ];
   const params = usePathname();
   return (
-    <div className="bg-white rounded-full my-5 py-2 mx-4 px-10 text-black fixed w-full overflow-hidden">
-      <div className=" flex justify-between items-center">
-        <Link href={"/"}>
-          <Image src={Logo} width={200} height={100} alt="logo" />
-        </Link>
+    <div className="bg-white rounded-full text-black fixed w-full py-2 my-5 px-5 ">
+      <div className=" flex justify-between items-center ">
+        <div className="">
+          <Link href={"/"}>
+            <Image src={Logo} width={200} height={100} alt="logo" />
+          </Link>
+        </div>
 
-        <div className=" flex items-center justify-evenly  gap-10 ">
+        <div className=" flex items-center justify-evenly  gap-5 hidden md:inline-flex ">
           {nav.map((navs) => (
             <Link
               href={navs.url}
               key={navs.label}
               className={
                 params === navs.url
-                  ? " bg-green-500 px-4 py-2 rounded-full font-bold transition-colors   duration-500"
+                  ? " bg-green-500 px-3 py-1 rounded-full font-bold transition-colors   duration-500"
                   : ""
               }
             >
@@ -68,23 +71,29 @@ const NavBar = () => {
             </Link>
           ))}
         </div>
-        <div className="flex gap-2  px-5 items-center hidden lg:inline-flex">
-          <Image src={doctor} className="w-[44px]" alt="doctor" />
-          <div className="border-r-2 flex flex-col px-5 ">
-            <p className="text-sm">Dr. Jose Simmons</p>
-            <p className="text-sm">General Practitioner</p>
+
+        <div className="flex gap-2  px-5 items-center  ">
+          <div className="text-black inline-flex md:hidden  mx-10">
+            <button>menu</button>
           </div>
-          <div className=" flex gap-5">
-            <Image
-              src={settings}
-              className="h-[20px] w-[20px]"
-              alt="navicons"
-            />
-            <Image
-              src={verticleMore}
-              className="w-[4px] h-[20px]"
-              alt="navicons"
-            />
+          <Image src={doctor} className="w-[44px] h-fit" alt="doctor" />
+          <div className="hidden xl:inline-flex items-center gap-2">
+            <div className="border-r-2 flex flex-col px-5 ">
+              <p className="text-sm">Dr. Jose Simmons</p>
+              <p className="text-sm">General Practitioner</p>
+            </div>
+            <div className=" flex gap-5">
+              <Image
+                src={settings}
+                className="h-[20px] w-[20px]"
+                alt="navicons"
+              />
+              <Image
+                src={verticleMore}
+                className="w-[4px] h-[20px]"
+                alt="navicons"
+              />
+            </div>
           </div>
         </div>
       </div>

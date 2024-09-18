@@ -20,7 +20,7 @@ const Chart = ({ items }) => {
             <div className="" key={index}>
               {index === 3 && (
                 <div className="flex gap-5">
-                  <div className=" w-[450px] flex">
+                  <div className=" min-w-0 md:w-[450px] flex">
                     <Line
                       data={{
                         labels: i.diagnosis_history
@@ -56,14 +56,14 @@ const Chart = ({ items }) => {
                       }}
                     />
                   </div>
-                  <div className="flex flex-col gap-5">
+                  <div className="flex flex-col gap-5 hidden lg:flex">
                     <div className="flex flex-col gap-2">
                       <div className="flex gap-2 items-center">
                         <div className="bg-[#E66FD2] w-[14px] h-[14px] rounded-full "></div>
                         <h1 className="font-bold">Systolic</h1>
                       </div>
 
-                      <h1 className="w-[150px]">
+                      <h1 className="max-w-[150px]">
                         {
                           i.diagnosis_history[0]?.blood_pressure?.systolic
                             ?.value
@@ -82,7 +82,7 @@ const Chart = ({ items }) => {
                         <h1 className="font-bold">Diastolic</h1>
                       </div>
 
-                      <h1 className="w-[150px]">
+                      <h1 className="max-w-[150px]">
                         {
                           i.diagnosis_history[0]?.blood_pressure?.diastolic
                             ?.value

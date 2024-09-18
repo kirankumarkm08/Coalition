@@ -33,10 +33,12 @@ const Home = () => {
   }, [credentials]);
 
   return (
-    <div className="flex  mx-auto   justify-center overflow-hidden py-20  ">
+    <div className="flex  mx-auto   justify-center overflow-hidden py-20 px-10  ">
       <Fetch state={state} />
-      <DiagnosisHistory items={state} />
-      <PatientDetails items={state} />
+      <div className="flex  ">
+        <DiagnosisHistory items={state} />
+        <PatientDetails items={state} />
+      </div>
     </div>
   );
 };

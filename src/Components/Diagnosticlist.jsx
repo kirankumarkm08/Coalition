@@ -5,7 +5,7 @@ const Diagnosticlist = ({ list }) => {
 
   return (
     <div>
-      <div className="max-w-[766px] h-[349px] overflow-auto  bg-white rounded-3xl my-10 mx-5   text-[14px] ">
+      <div className="max-w-[766px]  overflow-auto  bg-white rounded-3xl my-10 mx-5   text-[14px] ">
         <h1 className="text-[30px]  font-bold px-10 py-5">Diagnostic List </h1>
         <div className="">
           <div className="">

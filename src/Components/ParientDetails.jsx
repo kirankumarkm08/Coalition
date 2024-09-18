@@ -10,8 +10,8 @@ import Lab from "@/Components/Lab-results";
 
 const ParientDetails = ({ items }) => {
   return (
-    <div>
-      <div className=" max-w-[376px] min-w-[376px] min-h-[740px] bg-white my-10 rounded-3xl flex flex-col items-center py-5 inset-0 ">
+    <div className=" min-w-0 lg:w-[370px]   ">
+      <div className="   min-h-[740px] bg-white my-10 rounded-3xl flex flex-col items-center py-5 inset-0 overflow-auto ">
         <div className="">
           {Array.isArray(items) &&
             items.map((i, index) => (
