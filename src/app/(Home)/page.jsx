@@ -30,7 +30,7 @@ const Home = () => {
       })
       .then((data) => setState(data))
       .catch((error) => console.error("Error:", error));
-  }, []);
+  }, [credentials]);
 
   return (
     <div className="flex  mx-auto   justify-center overflow-hidden py-20  ">

@@ -8,7 +8,7 @@ const Results = ({ result }) => {
   return (
     <div className="flex gap-3 mx-2 ">
       <div className="w-[228px] h-[242px] rounded-md flex flex-col  bg-[#E0F3FA] px-3 py-5 ">
-        <Image src={Respiratory} />
+        <Image src={Respiratory} alt="Respiratory" />
         {Array.isArray(result) &&
           result.map((res, index) => (
             <>
@@ -19,7 +19,7 @@ const Results = ({ result }) => {
                 >
                   <div className="flex gap-3">
                     {res?.diagnosis_history.map((i, index) => (
-                      <div className="my-2">
+                      <div className="my-2" key={index}>
                         {index === 0 && (
                           <div className="">
                             <h1 className="text-[20px]">RespiratoryRate </h1>
@@ -51,7 +51,7 @@ const Results = ({ result }) => {
                 >
                   <div className="flex gap-3">
                     {res?.diagnosis_history.map((i, index) => (
-                      <div className="my-2">
+                      <div className="my-2" key={index}>
                         {index === 0 && (
                           <div className="">
                             <h1 className="text-[20px]">Temparature </h1>
@@ -85,7 +85,7 @@ const Results = ({ result }) => {
                 >
                   <div className="flex gap-3">
                     {res?.diagnosis_history.map((i, index) => (
-                      <div className="my-2">
+                      <div className="my-2" key={index}>
                         {index === 0 && (
                           <div className="">
                             <h1 className="text-[20px]">HeartRate </h1>

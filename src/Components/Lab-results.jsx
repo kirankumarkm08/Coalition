@@ -17,8 +17,11 @@ const Lab = ({ labresults }) => {
                     {index === 3 ? (
                       <div className=" ">
                         <div className="">
-                          {items.lab_results.map((i) => (
-                            <div className=" flex justify-between w-[300px]  hover:bg-black/20 px-4 gap-4 py-2 ">
+                          {items.lab_results.map((i, index) => (
+                            <div
+                              className=" flex justify-between w-[300px]  hover:bg-black/20 px-4 gap-4 py-2 "
+                              key={index}
+                            >
                               <ul>
                                 <li>{i}</li>
                               </ul>

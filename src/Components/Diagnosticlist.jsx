@@ -5,7 +5,7 @@ const Diagnosticlist = ({ list }) => {
 
   return (
     <div>
-      <div className="max-w-[766px] h-[349px] overflow-auto   bg-white rounded-3xl my-10 mx-5   text-[14px] ">
+      <div className="max-w-[766px] h-[349px] overflow-auto  bg-white rounded-3xl my-10 mx-5   text-[14px] ">
         <h1 className="text-[30px]  font-bold px-10 py-5">Diagnostic List </h1>
         <div className="">
           <div className="">
@@ -20,11 +20,14 @@ const Diagnosticlist = ({ list }) => {
               <tbody>
                 {Array.isArray(list) &&
                   list.map((i, index) => (
-                    <div className="" key={index}>
+                    <div className="" key={i.id}>
                       {index === 3 && (
                         <div className="">
-                          {i?.diagnostic_list?.map((results) => (
-                            <tr className="flex justify-between items-center border-b-2 py-5">
+                          {i?.diagnostic_list?.map((results, index) => (
+                            <tr
+                              className="flex justify-between items-center border-b-2 py-5"
+                              key={index}
+                            >
                               <td>{results.name}</td>
                               <td className="flex items-start">
                                 {results.description}

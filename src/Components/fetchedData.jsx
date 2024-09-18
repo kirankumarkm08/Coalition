@@ -17,8 +17,8 @@ const FetchedData = ({ state }) => {
       <div className="my-5   flex flex-col gap-2  h-[40px] text-sm ">
         {}
         {Array.isArray(state) &&
-          state?.map((state, key) => (
-            <div className="">
+          state?.map((state, index) => (
+            <div className="" key={index}>
               <div className="flex items-center gap-2 hover:bg-black/5">
                 <Image
                   src={state?.profile_picture}
@@ -27,10 +27,7 @@ const FetchedData = ({ state }) => {
                   className="w-auto h-auto"
                   alt={state.name}
                 />
-                <div
-                  key={key}
-                  className="flex  flex-col  items-start w-full h-full   "
-                >
+                <div className="flex  flex-col  items-start w-full h-full   ">
                   <h2 className="">{state.name}</h2>
                   <div className="flex">
                     <h2>{state.gender}</h2>,<h2>{state.age}</h2>
